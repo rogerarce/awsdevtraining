@@ -20,7 +20,7 @@ Balance load a cross multiple web servers
 - Best suited for load balancing of TCP traffic
 - for extreme performance is required
 - Operating at connection level (Layer 4)
-- Capable of handling millions of requists
+- Capable of handling millions of requests
 
 ### Classic Load Balancer
 - Legacy ELB

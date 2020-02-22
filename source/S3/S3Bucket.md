@@ -1,9 +1,72 @@
-# S3 Bucket
+# S3 (Simple Storage Service)
 
-## Access S3 Bucket via EC2 Instance
-- Create IAM user for aws instance
-- ssh to EC2 Instance
-- configure aws account via terminal
-    - `aws configure`
-    - add access_key & secret_access_key
+- ## Provides
+    - Object Storage
+    - Secure
+    - Durable
+    - Highly-Scalable
+    - Data is spread multiple devices & facilities
+        - high availability
+- ## Basics
+    - 99.9 availability
+    - 99.9^11 durability
+    - Tiered Storage Available
+    - Lifecycle Management
+    - Versioning
+    - Ecryption
+    - Secure data
+        - control list
+        - access policy
+    - Object based
+    - File can be from 0 bytes to 5 TB
+    - Unlimited Storage
+    - Files are stored in Bucket (folder)
+    - Universal namespace (bucket names must be unique)
+        - provides DNS for buckets
+    - 200 Response when upload is success.
+    - ### Data Consistency Model
+        - Read after Write consistency for PUTS of new object
+            - file is available after uploaded.
+        - Not instant for updates or delete (PUT and DELETES)
+            - eventual consistency
+    - ## Sample Key-Value store
+        - Object based
+            - key (name of the object)
+            - value (file data or bytes)
+            - version id (for versioning)
+            - metadata
+            - subresources
+                - bucket policies
+                - access control list
+                - cross origin resource sharing (cors)
+                - transfer acceleration
+- ## Store Tier/Classes
+    - s3: 99.9 availability & 99.9^11 durability
+        - stored redundantly across multiple devices
+    - S3 - IA (Infrequent Accessed)
+        - for data accessed less frequently
+        - but requires rapid access when needed
+        - lower fee
+        - charge on retrieval fee
+    - s3 - One Zone IA
+        - store in single AZ
+        - offeres 99.5% availability
+        - Cost is 20% less than regular s3 - IA.
+    - Reduced Redundancy Storage
+        - Designed to provided 99.9% durability & availability
+        - for data that can be recreated if lost.
+        - not offered in some region
+        - not recommeded
+        - possible phase out.
+    - Glacier
+        - very cheap
+        - for archiving
+        - optimised for data infrequently accessed
+        - 3 - 5 hrs to restore
+- ## Access S3 Bucket via EC2 Instance
+    - Create IAM user for aws instance
+    - ssh to EC2 Instance
+    - configure aws account via terminal
+        - `aws configure`
+        - add access_key & secret_access_key
 
