@@ -9,13 +9,3 @@
 - `password rotation policy`
 - supports PCI DSS Compliance
 
-### Critical Terms for Exam
-- Users
-    - end users
-- Groups
-    - Collection of `Users`
-- Role
-    - Set to define
-- Policy
-    - defines the permission of a users, groups, role.
-

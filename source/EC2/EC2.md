@@ -71,7 +71,7 @@
     - use for >= 10,000 IOPS
     - designed for I/O intensive applications such as large SQL or NoSQL database
     - can provision 20,000 IOPS
-- Throughput Optimized HDD (ST1)
+- Throughput Optimized HDD (ST1) (Magnetic)
     - Big Data
     - Data warehouse
     - Log processing
@@ -85,37 +85,34 @@
     - bootable
     - ideal fork workloads
 
-## Exam Tips
+### EC2 with S3 Roles
+- Apply s3 iam role to EC2 instance
 
-### Pricing
+### EC2 Encrypt and EBS Volume Attached to EC2 Instance
+- encrypt volume.
+- mounting volume
+    - `lsblk` -> `xvdf` (new volume)
+    - `file -s /dev/xvdf` -> (result) `/dev/xvdf: data`
+    - `mkfs -t ext4 /dev/xvdf`
+        - type of file systems
+            - ext4
+    - `mkdir filesystem`
+    - `mount /dev/xvdf /filesystem` (mounting xvdf disk to filesystem)
+- unmount volume
+    - `unmount -d /dev/vxdf`
+- create snapshot
+    - select actions button
+    - select create snapshot
+- create volume from snapshot
+    - select snapshot -> actions -> create volume
+    - follow steps on `mounting volume`
+    - exclude third step.
+- create unencrypted snapshot to encrypted snapshot
+    - create a copy of the unencrypted snapshot.
+    - and select the encrypt snapshot option.
 
-- On Demand
-    - allows to pay a fix rate by hour (or by second) with no commitment.
+### EC2 Summary
+- ON Demand
 - Reserved
-    - provides with capaticy reservation, and offer significant discount on hourly charges for instance
-    - 1 Year or 3 Year Terms.
 - Spot
-    - enables to bid whatever price you want for instance capacity, providing
-    - for even greater savings if your applications have flexible start and end times.
 - Dedicated Hosts
-    - Physical EC2 server dedicated for your use.
-    - If terminated by AWS
-        - no charge for partial hour of usage.
-    - If self termination
-        - charge for complete hours in which the instance ran.
-- `FIGHT DR MC PX` Instance Types
-- `EBS Volume Types`
-    - `SSD`
-        - General Purpose
-        - Provisioned IOPS SSD
-    - `Magnetic`
-        - Throughput Optiomized HDD
-            - Low cost HDD Volume
-            - Designed for frequently accessed
-            - Throughput-intensive workloads
-        - Cold HDD
-            - Lowest cost HDD Volume
-            - Less frequently accessed workloads
-        - Magnetic
-            - Previous Generation
-            - `Can be a boot volume`
