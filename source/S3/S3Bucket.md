@@ -69,4 +69,49 @@
     - configure aws account via terminal
         - `aws configure`
         - add access_key & secret_access_key
-
+- ## Encryption 
+    - In Transit
+        - SSL/TLS
+    - At Rest
+        - Server Side Encryption
+            - s3 managed key SS3-S3
+            - AWS Key Management Service, Managed Keys SSE-KSM
+            - Server Side Encryption with Customer Provided Keys SS3-C
+    - Client Side Encryption
+    - Encrypted at upload time
+        - `x-amz-server-side-ecnryption` parameter in header
+        - `x-amz-server-side-encryption: AES256`
+        - `x-amz-server-side-encryption: ams:kms`
+- ## CORS
+    - Cross Origin Resource Sharing
+    - Set CORS in `Permission`
+- ## CloudFront
+    - CDN content delivery network
+    - Lower Network latency
+    - Time To Live
+    - Transfer Acceleration
+        - optimized network path
+    - Distribution Types
+        - Web Distribution
+            - Used for website Http/Https
+        - RTMP
+            - Media Streaming
+            - Flash multi media
+    - Terminilogy
+        - Edge Location
+            - Separate to an AWS Region/AZ
+        - Origin
+            - the origin of all the file
+        - Distribution
+            - Name of the CDN
+            - collection of edge location
+        - Web Destribution
+            - used for website
+        - RTMP
+            - Media Streaming
+- ## Performance Optimization
+    - GET-Intensive Workloads
+        - use CloudFront
+    - Mix Request Workload
+        - key names has impact in performance for intensive workloads
+        - using random prefix provides optimal performance

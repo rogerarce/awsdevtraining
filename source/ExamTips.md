@@ -92,4 +92,42 @@
     - needs pub/sub
     - if doing leaderboard.
 
+## S3
+- Edge Location
+    - the location where the contetn will be cached
+    - separate to aws region/az
+    - supports READ and WRITE
+    - utilized by s3 transfer acceleration to reduce latency for s3 uploads.
+    - TTL (time to live)
+    - Clear cached (with charge).
+- Origin
+    - Origin of all files to be cached
+    - can be s3 bucket
+    - ec2 instance
+    - route53
+- Distribution
+    - name given to cdn
+    - collection of edge location
+    - Web Distribution
+        - typically used for website
+    - RTMP
+        - for media streaming
+- Performance Optimization
+    - GET Intensive Workload
+        - CloundFront
+    - Mixed Request Workload (not relevant in current S3 Performance Updates).
+        - Avoid sequential name
+        - add random prefix for better performance
 
+## Lambda
+- Lambda Scales out automatically
+- Lambda functions are independent, 1 event = 1 function
+- Lambda is serverless
+- Know what services are serverless
+- Lambda functions can trigger other Lambda functions
+- AWS X-Ray allows you to debug `whats happening`
+- Lambda can do things globally
+- Know you lambda triggers
+
+## API Gateway
+- 

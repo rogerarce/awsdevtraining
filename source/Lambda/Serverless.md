@@ -1,0 +1,60 @@
+# AWS Lambda
+- A compute service where you can upload your code and create lambda function.
+- Lambda takes care of provisioning and managing the servers
+- As an event-driven compute service, triggers
+- Compute service to run your code in response to HTTP (API Gateway)
+
+- ## Basic
+    - lambda func can trigger other lambda func.
+    - languages
+        - nodejs
+        - java
+        - python
+        - c#
+        - go
+    - Pricing
+        - First 1 million requests are free (per month).
+        - $0.20 per 1 million requests.
+        - Duration
+    - Features
+        - No servers
+        - Continuous Scaling
+        - Cheap
+- ## API
+    - Application Programming Interface
+    - Types
+        - REST API (representational State Transfer)
+        - SOAP API's (Simple Object Access Protocol) (xml)
+    - API Gateway
+        - full manage service
+        - makes it easy to maintain monitor publish and secure api at any scale.
+        - Expose http endpoint to define restful api's
+        - Serverlessly connect to services like Lambda & DynamoDB
+        - Send each API endpoint to a different target
+        - Run efficiently with low cost
+        - Scale Effortlessly
+        - Track and control usage by api key
+        - Throttle requests to prevent attacks
+        - Connect to cloudwatch to log all requests for monitoring
+    - Configuration
+        - Define an api
+        - Define Resources and nested Resources
+        - For each Resources
+            - Select supported http methods
+            - Set security
+            - Choose target
+            - Set Request and response transformation
+        - Deploy Api to a stage
+            - uses api gateway domain
+            - can use custom domain
+            - supports aws certificate manager. free ssl/tls certs
+    - API Caching
+        - cache endpoint response
+        - reduce number of calls made to endpoint
+        - improve request latency
+        - specify ttl for cached requests
+        - responds by looking up the endpoint response
+        - cache instead of making requests
+- ## Same Origin Policy
+    - same origin policy
+- ## Cross Origin Request S
